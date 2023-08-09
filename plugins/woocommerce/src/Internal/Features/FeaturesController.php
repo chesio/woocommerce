@@ -94,37 +94,37 @@ class FeaturesController {
 		$hpos_enable_sync   = DataSynchronizer::ORDERS_DATA_SYNC_ENABLED_OPTION;
 		$hpos_authoritative = CustomOrdersTableController::CUSTOM_ORDERS_TABLE_USAGE_ENABLED_OPTION;
 		$features           = array(
-			'analytics'            => array(
+			'analytics'                => array(
 				'name'               => __( 'Analytics', 'woocommerce' ),
 				'description'        => __( 'Enables WooCommerce Analytics', 'woocommerce' ),
 				'is_experimental'    => false,
 				'enabled_by_default' => true,
 				'disable_ui'         => false,
 			),
-			'new_navigation'       => array(
+			'new_navigation'           => array(
 				'name'            => __( 'Navigation', 'woocommerce' ),
 				'description'     => __( 'Adds the new WooCommerce navigation experience to the dashboard', 'woocommerce' ),
 				'is_experimental' => false,
 				'disable_ui'      => false,
 			),
-			'product_block_editor' => array(
+			'product_block_editor'     => array(
 				'name'            => __( 'New product editor', 'woocommerce' ),
 				'description'     => __( 'Try the new product editor (Beta)', 'woocommerce' ),
 				'is_experimental' => true,
 				'disable_ui'      => false,
 			),
 			// Options for HPOS features are added in CustomOrdersTableController to keep the logic in same place.
-			'custom_order_tables'  => array( // This exists for back-compat only, otherwise it's value is superseded by $hpos_authoritative option.
+			'custom_order_tables'      => array( // This exists for back-compat only, otherwise it's value is superseded by $hpos_authoritative option.
 				'name'               => __( 'High-Performance order storage (COT)', 'woocommerce' ),
 				'enabled_by_default' => false,
 			),
-			$hpos_authoritative    => array(
+			$hpos_authoritative        => array(
 				'name'            => __( 'High performance order storage', 'woocommerce' ),
 			),
-			$hpos_enable_sync      => array(
+			$hpos_enable_sync          => array(
 				'name'            => '',
 			),
-			'cart_checkout_blocks' => array(
+			'cart_checkout_blocks'     => array(
 				'name'            => __( 'Cart & Checkout Blocks', 'woocommerce' ),
 				'description'     => __( 'Optimize for faster checkout', 'woocommerce' ),
 				'is_experimental' => false,
@@ -140,6 +140,12 @@ class FeaturesController {
 				'enabled_by_default' => true,
 				'disable_ui'         => false,
 			),
+			'order_source_attribution' => array(
+				'name'            => __( 'Order Source Attribution (Beta)', 'woocommerce' ),
+				'description'     => __( 'Enable this feature to track and credit channels and campaigns that contribute to orders on your site.', 'woocommerce' ),
+				'is_experimental' => true,
+				'disable_ui'      => false,
+			),
 		);
 
 		$this->legacy_feature_ids = array(
@@ -147,6 +153,7 @@ class FeaturesController {
 			'new_navigation',
 			'product_block_editor',
 			'marketplace',
+			'order_source_attribution',
 			// Compatibility for COT is determined by `custom_order_tables'.
 			CustomOrdersTableController::CUSTOM_ORDERS_TABLE_USAGE_ENABLED_OPTION,
 			DataSynchronizer::ORDERS_DATA_SYNC_ENABLED_OPTION,
