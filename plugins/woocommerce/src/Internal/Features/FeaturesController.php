@@ -141,10 +141,11 @@ class FeaturesController {
 				'disable_ui'         => false,
 			),
 			'order_source_attribution' => array(
-				'name'            => __( 'Order Source Attribution (Beta)', 'woocommerce' ),
-				'description'     => __( 'Enable this feature to track and credit channels and campaigns that contribute to orders on your site.', 'woocommerce' ),
-				'is_experimental' => true,
-				'disable_ui'      => false,
+				'name'               => __( 'Order Source Attribution (Beta)', 'woocommerce' ),
+				'description'        => __( 'Enable this feature to track and credit channels and campaigns that contribute to orders on your site.', 'woocommerce' ),
+				'is_experimental'    => false,
+				'disable_ui'         => false,
+				'enabled_by_default' => true,
 			),
 		);
 
