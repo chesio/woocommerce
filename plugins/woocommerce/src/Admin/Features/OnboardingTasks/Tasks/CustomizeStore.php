@@ -165,7 +165,6 @@ class CustomizeStore extends Task {
 
 		wp_enqueue_script( 'wp-editor' );
 		wp_enqueue_script( 'wp-format-library' ); // Not sure if this is needed.
-		wp_enqueue_script( 'wp-router' );
 		wp_enqueue_style( 'wp-editor' );
 		wp_enqueue_style( 'wp-edit-site' );
 		wp_enqueue_style( 'wp-format-library' );
@@ -178,8 +177,8 @@ class CustomizeStore extends Task {
 			wp_enqueue_style( 'wp-block-library-theme' );
 		}
 		/** This action is documented in wp-admin/edit-form-blocks.php
-		 *
-		 * @since 8.0.3
+		*
+		* @since 8.0.3
 		*/
 		do_action( 'enqueue_block_editor_assets' );
 	}
